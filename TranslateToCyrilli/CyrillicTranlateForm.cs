@@ -57,6 +57,7 @@ namespace TranslateToCyrillic
                 char ch;
                 char ch2 = '2';
 
+                // index values for other chars
                 int h = i - 1;
                 int j = i + 1;
                 try
@@ -73,6 +74,7 @@ namespace TranslateToCyrillic
                         ch0 = inputText[h];
                     }
 
+                    // Go do the thing and bring in the cyrillic baby
                     letters = Conversion.Letters(ref ch0, ref ch, ref ch2 );
 
                     charList.Add(letters);

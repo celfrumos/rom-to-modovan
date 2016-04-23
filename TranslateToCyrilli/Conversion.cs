@@ -41,11 +41,6 @@ namespace TranslateToCyrillic
     ********************************************************************************************************/
     class Conversion
     {
-        //    private char _ch0 = '0';
-        //    private char _ch = '1';
-        //    private char _ch2 = '2';
-        //    private string _letters = "";
-
         public Conversion()
         {
 
@@ -53,8 +48,11 @@ namespace TranslateToCyrillic
 
         public string Letters(ref char ch0, ref char ch, ref char ch2)
         {
+            // initialize return value
             string letters = "";
 
+            // If the chars were punctuation
+            /*****************************************/
             if (ch == ' ')
             {
                 letters = " ";
@@ -99,6 +97,8 @@ namespace TranslateToCyrillic
             {
                 letters = "!";
             }
+            /******************************************/
+
             else if (ch == 'A' || ch == 'a')
             {
                 letters = (char.IsUpper(ch) ? 'A' : 'a').ToString();
@@ -172,6 +172,7 @@ namespace TranslateToCyrillic
             }
             else if (ch == 'C' || ch == 'c')
             {
+                // If c is a ch sound with a vowel
                 if (ch2 == 'I' || ch2 == 'E' || ch2 == 'i' || ch2 == 'e')
                 {
                     letters = (char.IsUpper(ch) ? 'Ч' : 'ч').ToString();
@@ -221,11 +222,13 @@ namespace TranslateToCyrillic
             }
             else if (ch == 'S' || ch == 's')
             {
+                // If it's Sh
                 if (ch2 == 'H' || ch2 == 'h')
                 {
                     letters = (char.IsUpper(ch) ? 'Ш' : 'ш').ToString();
 
                 }
+                // If it makes ts sound, skip this letter
                 else if (ch0 == 't')
                 {
                     letters = "";
@@ -238,6 +241,7 @@ namespace TranslateToCyrillic
             }
             else if (ch == 'T' || ch == 't')
             {
+                // If it makes Ts
                 if (ch2 == 'S' || ch2 == 's')
                 {
                     letters = (char.IsUpper(ch) ? 'Ц' : 'ц').ToString();
@@ -248,13 +252,10 @@ namespace TranslateToCyrillic
                 }
 
             }
-            else if (ch == 'U' || ch == 'u')
+            else if ((ch0 != 'I' && ch0 != 'i') && (ch == 'U' || ch == 'u'))
             {
-                if (ch0 != 'I' && ch0 != 'i')
-                {
-                    letters = (char.IsUpper(ch) ? 'У' : 'у').ToString();
-                }
-
+                // If it doesn't make iu
+                letters = (char.IsUpper(ch) ? 'У' : 'у').ToString();
             }
             else if (ch == 'F' || ch == 'f')
             {
@@ -334,29 +335,23 @@ namespace TranslateToCyrillic
                 if (ch2 != '2')
                 {
                     letters = (char.IsUpper(ch) ? 'У' : 'у').ToString();
-
                 }
-
             }
             else if (ch == 'Ț' || ch == 'ț')
             {
                 letters = (char.IsUpper(ch) ? 'Ц' : 'ц').ToString();
-
             }
             else if (ch == 'Ș' || ch == 'ș')
             {
                 letters = (char.IsUpper(ch) ? 'Ш' : 'ш').ToString();
-
             }
             else if (ch == 'Â' || ch == 'â' || ch == 'Î' || ch == 'î')
             {
                 letters = (char.IsUpper(ch) ? 'Ы' : 'ы').ToString();
-
             }
             else if (ch == 'Ă' || ch == 'ă')
             {
                 letters = (char.IsUpper(ch) ? 'Э' : 'э').ToString();
-
             }
             return letters;
         }
