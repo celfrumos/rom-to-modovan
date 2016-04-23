@@ -36,6 +36,7 @@
             this.txtBoxOriginal = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
             // btnConvert
@@ -116,12 +117,22 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(629, 23);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScrollBarsEnabled = false;
+            this.webBrowser1.Size = new System.Drawing.Size(444, 434);
+            this.webBrowser1.TabIndex = 6;
+            // 
             // ConvertForm
             // 
             this.AcceptButton = this.btnConvert;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 484);
+            this.ClientSize = new System.Drawing.Size(1102, 484);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtBoxInput);
             this.Controls.Add(this.txtBoxOriginal);
@@ -132,6 +143,7 @@
             this.Controls.Add(this.btnConvert);
             this.Name = "ConvertForm";
             this.Text = "Cyrillinator 5000";
+            this.Load += new System.EventHandler(this.ConvertForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,6 +158,7 @@
         private System.Windows.Forms.RichTextBox txtBoxOriginal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
 

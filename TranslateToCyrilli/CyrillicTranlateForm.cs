@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace TranslateToCyrillic
 {
@@ -75,7 +76,7 @@ namespace TranslateToCyrillic
                     }
 
                     // Go do the thing and bring in the cyrillic baby
-                    letters = Conversion.Letters(ref ch0, ref ch, ref ch2 );
+                    letters = Conversion.Letters(ref ch0, ref ch, ref ch2);
 
                     charList.Add(letters);
 
@@ -107,6 +108,12 @@ namespace TranslateToCyrillic
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ConvertForm_Load(object sender, EventArgs e)
+        {
+            string curDir = Directory.GetCurrentDirectory();
+            this.webBrowser1.Url = new Uri(String.Format("file:///{0}/CyrillicWebPage.html", curDir));
         }
     }
 }
