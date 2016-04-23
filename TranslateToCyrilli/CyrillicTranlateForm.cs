@@ -43,6 +43,7 @@ namespace TranslateToCyrillic
         {
             Conversion Conversion = new Conversion();
 
+            // List to hold the characters
             string convertedText;
             List<string> charList = new List<string>();
 
@@ -51,6 +52,7 @@ namespace TranslateToCyrillic
             // Loop to assign the correct cyrillic text to each letter
             for (int i = 0; i < inputText.Length; i++)
             {
+                // Initialize char values to be left alone if no letter corresponding letter is found
                 char ch0 = '0';
                 char ch;
                 char ch2 = '2';

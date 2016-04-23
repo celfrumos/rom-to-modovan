@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConvertForm.cs">
+    <Compile Include="CyrillicTranlateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConvertForm.Designer.cs">
-      <DependentUpon>ConvertForm.cs</DependentUpon>
+    <Compile Include="CyrillicTranlateForm.Designer.cs">
+      <DependentUpon>CyrillicTranlateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Conversion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ConvertForm.resx">
-      <DependentUpon>ConvertForm.cs</DependentUpon>
+    <EmbeddedResource Include="CyrillicTranlateForm.resx">
+      <DependentUpon>CyrillicTranlateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
